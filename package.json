@@ -9,9 +9,14 @@
   "bin": {
     "todo-month": "index.js"
   },
+  "scripts": {
+    "lint": "eslint --fix .",
+    "precommit": "yarn lint"
+  },
   "devDependencies": {
-    "eslint": "^4.1.1",
-    "eslint-config-shortlyster": "^2.2.0"
+    "eslint": "3.19.0",
+    "eslint-config-shortlyster": "^2.2.0",
+    "husky": "^0.14.2"
   },
   "dependencies": {
     "colors": "^1.1.2",

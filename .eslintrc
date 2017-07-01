@@ -1,3 +1,6 @@
 {
-  "extends": "shortlyster"
+  "extends": "shortlyster",
+  "rules": {
+    "no-confusing-arrow": "off"
+  }
 }
