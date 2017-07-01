@@ -6,6 +6,9 @@
   "repository": "git@github.com:one19/monthTodo.git",
   "author": "Drew Showalter <maelstroswim@gmail.com>",
   "license": "MIT",
+  "bin": {
+    "todo-month": "index.js"
+  },
   "devDependencies": {
     "eslint": "^4.1.1",
     "eslint-config-shortlyster": "^2.2.0"
