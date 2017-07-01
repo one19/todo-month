@@ -23,10 +23,10 @@ const dayAbbrevAppender = (dayNumber) =>
   dayNumber === 0 || dayNumber === 6 ? DAY_NAMES[dayNumber].toUpperCase() :
     DAY_NAMES[dayNumber].slice(0, 2);
 
-const text = [...Array(daysInMonth(year, month + 1))].reduce((text, _, dayNumber) =>
+const text = [...Array(daysInMonth(year, month + 1))].reduce((text, _, index) =>
   text.concat(
-    `### ${('0' + dayNumber).slice(-2)}-${('0' + dayNumber).slice(-2)}-${year}`,
-    ` - ${dayAbbrevAppender(weekday(year, month, dayNumber))}`,
+    `### ${('0' + (index + 1)).slice(-2)}-${('0' + month).slice(-2)}-${year}`,
+    ` - ${dayAbbrevAppender(weekday(year, month, index + 1))}`,
     '\n- \n'
   )
   , `NIGHTLY ${MONTH_NAMES[month].toUpperCase()}\n`);
