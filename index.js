@@ -1,3 +1,4 @@
+const colors = require('colors');
 const copyPaster = require('copy-paste');
 
 const supposedDate = process.argv[2];
@@ -32,3 +33,4 @@ const text = [...Array(daysInMonth(year, month + 1))].reduce((text, _, index) =>
   , `NIGHTLY ${MONTH_NAMES[month].toUpperCase()}\n`);
 
 copyPaster.copy(text.concat('\n\n#todo'));
+console.log('Wrote your month to the clipboard!'.rainbow)
