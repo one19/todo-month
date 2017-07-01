@@ -1,0 +1,13 @@
+{
+  "name": "monthTodo",
+  "version": "1.0.0",
+  "description": "Make a markdown monthly todo, given time",
+  "main": "index.js",
+  "repository": "git@github.com:one19/monthTodo.git",
+  "author": "Drew Showalter <maelstroswim@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.1.1",
+    "eslint-config-shortlyster": "^2.2.0"
+  }
+}
