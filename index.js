@@ -1,4 +1,4 @@
-const fs = require('fs');
+const copyPaster = require('copy-paste');
 
 const supposedDate = process.argv[2];
 let date = new Date(supposedDate);
@@ -31,5 +31,4 @@ const text = [...Array(daysInMonth(year, month + 1))].reduce((text, _, dayNumber
   )
   , `NIGHTLY ${MONTH_NAMES[month].toUpperCase()}\n`);
 
-
-fs.writeFileSync(`nightly ${MONTH_NAMES[month]}`, text);
+copyPaster.copy(text.concat('\n\n#todo'));
