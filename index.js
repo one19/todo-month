@@ -4,9 +4,8 @@ const colors = require('colors'); // eslint-disable-line no-unused-vars
 // this ~crazy-scary~ _amazing_ package mutates Strings globally
 const copyPaster = require('copy-paste');
 
-const supposedDate = process.argv[2];
-let date = new Date(supposedDate);
-if (!date.getDate()) date = new Date();
+const target = process.argv[2];
+const date = target ? new Date(target) : target;
 
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
@@ -22,9 +21,11 @@ const month = date.getMonth();
 const fmt = str => `0${str}`.slice(-2);
 const weekday = (year, month, day) => new Date(year, month, day).getDay();
 const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
-const dayAbbrevAppender = dayNumber =>
-  dayNumber === 0 || dayNumber === 6 ? DAY_NAMES[dayNumber].toUpperCase() :
-    DAY_NAMES[dayNumber].slice(0, 2);
+const dayAbbrevAppender = dayNumber => (
+  [0, 6].contains(dayNumber)
+  ? DAY_NAMES[dayNumber].toUpperCase()
+  : DAY_NAMES[dayNumber].slice(0, 2)
+);
 
 const intro = `NIGHTLY ${MONTH_NAMES[month].toUpperCase()}`;
 const days = daysInMonth(year, month + 1);
