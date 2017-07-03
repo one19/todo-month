@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const _ = require('lodash');
 const colors = require('colors'); // eslint-disable-line no-unused-vars
 // this ~crazy-scary~ _amazing_ package mutates Strings globally
 const copyPaster = require('copy-paste');
@@ -18,20 +19,23 @@ const DAY_NAMES = [
 const year = date.getFullYear();
 const month = date.getMonth();
 
+const fmt = str => `0${str}`.slice(-2);
 const weekday = (year, month, day) => new Date(year, month, day).getDay();
-const daysInMonth = (year, month) =>
-  new Date(year, month, 0).getDate();
+const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
 const dayAbbrevAppender = dayNumber =>
   dayNumber === 0 || dayNumber === 6 ? DAY_NAMES[dayNumber].toUpperCase() :
     DAY_NAMES[dayNumber].slice(0, 2);
 
-const text = [...Array(daysInMonth(year, month + 1))].reduce((text, _, index) =>
-  text.concat(
-    `### ${(`0${index + 1}`).slice(-2)}-${(`0${month}`).slice(-2)}-${year}`,
-    ` - ${dayAbbrevAppender(weekday(year, month, index + 1))}`,
-    '\n- \n'
-  )
-  , `NIGHTLY ${MONTH_NAMES[month].toUpperCase()}\n`);
+const intro = `NIGHTLY ${MONTH_NAMES[month].toUpperCase()}`;
+const days = daysInMonth(year, month + 1);
+const list = _.times(days, index => (
+  `### ${fmt(index + 1)}-${fmt(month)}-${year}` +
+  ` - ${dayAbbrevAppender(weekday(year, month, index + 1))}` +
+  '\n- '
+));
+const end = '\n#todo';
 
-copyPaster.copy(text.concat('\n\n#todo'));
+const result = [intro, ...list, end].join('\n');
+copyPaster.copy(result);
+// eslint-disable-next-line no-console
 console.log('Wrote your month to the clipboard!'.rainbow);
