@@ -5,7 +5,7 @@ const colors = require('colors'); // eslint-disable-line no-unused-vars
 const copyPaster = require('copy-paste');
 
 const target = process.argv[2];
-const date = target ? new Date(target) : target;
+const date = target ? new Date(target) : new Date();
 
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
@@ -22,7 +22,7 @@ const fmt = str => `0${str}`.slice(-2);
 const weekday = (year, month, day) => new Date(year, month, day).getDay();
 const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
 const dayAbbrevAppender = dayNumber => (
-  [0, 6].contains(dayNumber)
+  [0, 6].includes(dayNumber)
   ? DAY_NAMES[dayNumber].toUpperCase()
   : DAY_NAMES[dayNumber].slice(0, 2)
 );
