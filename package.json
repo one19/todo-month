@@ -10,14 +10,16 @@
     "todo-month": "index.js"
   },
   "scripts": {
-    "lint": "eslint --fix .",
-    "precommit": "yarn lint",
+    "precommit": "yarn test && eslint .",
+    "test": "mocha",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "devDependencies": {
+    "chai": "^4.0.2",
     "eslint": "3.19.0",
     "eslint-config-shortlyster": "^2.2.0",
-    "husky": "^0.14.2"
+    "husky": "^0.14.2",
+    "mocha": "^3.4.2"
   },
   "dependencies": {
     "changelog-verify": "^1.0.4",

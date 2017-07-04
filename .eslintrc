@@ -2,5 +2,9 @@
   "extends": "shortlyster",
   "rules": {
     "no-confusing-arrow": "off"
+  },
+  "globals": {
+    "mocha": true,
+    "expect": true
   }
 }
