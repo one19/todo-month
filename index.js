@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 const _ = require('lodash');
-const colors = require('colors'); // eslint-disable-line no-unused-vars
 // this ~crazy-scary~ _amazing_ package mutates Strings globally
+const colors = require('colors'); // eslint-disable-line no-unused-vars
 const copyPaster = require('copy-paste');
 
 const target = process.argv[2];
 const date = target ? new Date(target) : new Date();
+if (!date.getDate()) throw new Error('Invalid date string!'.red);
 
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
