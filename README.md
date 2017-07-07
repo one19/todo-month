@@ -1,6 +1,7 @@
 # TODO-MONTH
 
 The tiniest little module for exporting a pretty md month of stuff to do
+[![Build status](https://badge.buildkite.com/5427c81c51ca67dff45bff63a533c3a1cbb864416d87210167.svg)](https://buildkite.com/the-hoard/todo-month)
 
 ### What it is:
 
