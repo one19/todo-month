@@ -1,7 +1,8 @@
 # TODO-MONTH
 
-The tiniest little module for exporting a pretty md month of stuff to do
 [![Build status](https://badge.buildkite.com/5427c81c51ca67dff45bff63a533c3a1cbb864416d87210167.svg)](https://buildkite.com/the-hoard/todo-month)
+
+The tiniest little module for exporting a pretty md month of stuff to do
 
 ### What it is:
 
@@ -21,10 +22,9 @@ This is really useful for people who like to make the most of their days, weeks,
 
 1.  `npm i -g month-todo` || `yarn add --global month-todo`
 2. When in your month (like on the first): `todo-month` anywhere in your terminal
-3. For an upcoming month (like september): `todo-month 2017-09`
+3. For an upcoming month (like september): `todo-month 2017-09 --dog --reverse` or just `todo-month`
 4. Bask in the pretty colors when the month is deposited in your clipboard
 
 ### TODO:
-- add tests
-- add ci & badge
-- add easy-patching npm deploy scripts
+- add a formatting module to interpret some variety of string input to pretty-print the days in whatever format you so choose
+- fix husky fixing things but leaving them dangling
