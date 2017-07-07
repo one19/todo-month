@@ -15,14 +15,15 @@ const dayAbbrevAppender = dayNumber => (
 
 
 module.exports = (date, monthIndex, options = {}) => {
-  const { dog, moarDog } = options;
+  const { dog, moarDog, reverse } = options;
   const d = dog ? '🐶' : '-';
   const D = moarDog ? '🐶' : '-';
 
   const year = date.getFullYear();
   const days = daysInMonth(year, monthIndex + 1);
+  const daysArray = reverse ? _.times(days, Number).reverse() : _.times(days, Number);
 
-  return _.times(days, index => (
+  return daysArray.map(index => (
     `### ${fmt(index + 1)}${D}${fmt(monthIndex + 1)}${D}${year}` +
     ` ${d} ${dayAbbrevAppender(weekday(year, monthIndex, index + 1))}` +
     '\n- '

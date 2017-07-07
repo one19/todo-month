@@ -41,6 +41,11 @@ describe('dayString(date, month)', () => {
     expect(septemberDays).to.eql(monthOfSeptember);
   });
 
+  it('lets you invert the ordering by passing -r or --reverse', () => {
+    const septemberDays = dayStringer(new Date('2017-09'), 8, { reverse: true });
+    expect(septemberDays).to.eql(monthOfSeptember.reverse());
+  });
+
   it('is capable of being silly with dogs', () => {
     const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true });
     expect(dogDays[0]).to.eql('### 01-09-2017 🐶 Fr\n- ');
