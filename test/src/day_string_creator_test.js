@@ -41,6 +41,21 @@ describe('dayString(date, month)', () => {
     expect(septemberDays).to.eql(monthOfSeptember);
   });
 
+  it('is capable of being silly with dogs', () => {
+    const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true });
+    expect(dogDays[0]).to.eql('### 01-09-2017 🐶 Fr\n- ');
+  });
+
+  it('seriously, is capable of being silly with dogs', () => {
+    const dogDays = dayStringer(new Date('2017-09'), 8, { moarDog: true });
+    expect(dogDays[0]).to.eql('### 01🐶09🐶2017 - Fr\n- ');
+  });
+
+  it('gets totally inundated with doggos', () => {
+    const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true, moarDog: true });
+    expect(dogDays[0]).to.eql('### 01🐶09🐶2017 🐶 Fr\n- ');
+  });
+
   it('handles leap years', () => {
     const leapFeb = dayStringer(new Date('2020-02'), 1);
     expect(leapFeb.length).to.eql(29);

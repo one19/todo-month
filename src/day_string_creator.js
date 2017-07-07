@@ -14,13 +14,17 @@ const dayAbbrevAppender = dayNumber => (
 );
 
 
-module.exports = (date, monthIndex) => {
+module.exports = (date, monthIndex, options = {}) => {
+  const { dog, moarDog } = options;
+  const d = dog ? '🐶' : '-';
+  const D = moarDog ? '🐶' : '-';
+
   const year = date.getFullYear();
   const days = daysInMonth(year, monthIndex + 1);
 
   return _.times(days, index => (
-    `### ${fmt(index + 1)}-${fmt(monthIndex + 1)}-${year}` +
-    ` - ${dayAbbrevAppender(weekday(year, monthIndex, index + 1))}` +
+    `### ${fmt(index + 1)}${D}${fmt(monthIndex + 1)}${D}${year}` +
+    ` ${d} ${dayAbbrevAppender(weekday(year, monthIndex, index + 1))}` +
     '\n- '
   ));
 };
