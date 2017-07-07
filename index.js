@@ -2,11 +2,21 @@
 // this ~crazy-scary~ _amazing_ package mutates Strings globally
 const colors = require('colors'); // eslint-disable-line no-unused-vars
 const copyPaster = require('copy-paste');
+const program = require('commander');
 const dayStringer = require('./src/day_string_creator');
+const parseDateString = require('./src/date_parser');
 
-const target = process.argv[2];
-const date = target ? new Date(target) : new Date();
-if (!date.getDate()) throw new Error('Invalid date string!'.red);
+program
+  .command('* [dateString]')
+  .option('-r  --reverse', 'Reverse month output flow')
+  .option('-d, --dog', 'Add doggos')
+  .option('-D, --moar-dog', 'Add lots of dog')
+  .parse(process.argv);
+
+
+const options = program.commands[0];
+const possibleDateString = program.commands[0].args[0];
+const date = parseDateString(possibleDateString);
 
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
@@ -16,7 +26,7 @@ const monthIndex = date.getMonth();
 
 
 const intro = `# NIGHTLY ${MONTH_NAMES[monthIndex].toUpperCase()}`;
-const list = dayStringer(date, monthIndex);
+const list = dayStringer(date, monthIndex, options);
 const end = '\n#todo';
 
 
