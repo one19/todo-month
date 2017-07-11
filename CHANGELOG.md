@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+### Added
+- Adds `prepush` testing & `esling --fix`es into the commit itself!
 
 ## [1.1.0][] - 2017-07-08
 ### Changed
