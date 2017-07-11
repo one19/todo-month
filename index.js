@@ -11,6 +11,7 @@ program
   .option('-r  --reverse', 'Reverse month output flow')
   .option('-d, --dog', 'Add doggos')
   .option('-D, --moar-dog', 'Add lots of dog')
+  .option('-f, --format [string]', 'Optionally pass a date format string in')
   .parse(process.argv);
 
 

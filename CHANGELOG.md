@@ -2,9 +2,12 @@
 
 ## [Unreleased][]
 
-## [1.1.1][] - 2017-07-17
+### Changed
+- Refactored date string parsing to use standard date string format
+
 ### Added
 - Adds `prepush` testing & `esling --fix`es into the commit itself!
+- Adds optionally formatting dates to any valid datestring.
 
 ## [1.1.0][] - 2017-07-08
 ### Changed

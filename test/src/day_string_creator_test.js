@@ -46,23 +46,47 @@ describe('dayString(date, month)', () => {
     expect(septemberDays).to.eql(monthOfSeptember.reverse());
   });
 
-  it('is capable of being silly with dogs', () => {
-    const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true });
-    expect(dogDays[0]).to.eql('### 01-09-2017 🐶 Fr\n- ');
-  });
-
-  it('seriously, is capable of being silly with dogs', () => {
-    const dogDays = dayStringer(new Date('2017-09'), 8, { moarDog: true });
-    expect(dogDays[0]).to.eql('### 01🐶09🐶2017 - Fr\n- ');
-  });
-
-  it('gets totally inundated with doggos', () => {
-    const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true, moarDog: true });
-    expect(dogDays[0]).to.eql('### 01🐶09🐶2017 🐶 Fr\n- ');
-  });
-
   it('handles leap years', () => {
     const leapFeb = dayStringer(new Date('2020-02'), 1);
     expect(leapFeb.length).to.eql(29);
+  });
+
+  describe('with dogs', () => {
+    it('is capable of being silly with dogs', () => {
+      const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true });
+      expect(dogDays[0]).to.eql('### 01-09-2017 🐶 Fr\n- ');
+    });
+
+    it('seriously, is capable of being silly with dogs', () => {
+      const dogDays = dayStringer(new Date('2017-09'), 8, { moarDog: true });
+      expect(dogDays[0]).to.eql('### 01🐶09🐶2017 - Fr\n- ');
+    });
+
+    it('gets totally inundated with doggos', () => {
+      const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true, moarDog: true });
+      expect(dogDays[0]).to.eql('### 01🐶09🐶2017 🐶 Fr\n- ');
+    });
+  });
+
+  describe('when given dateformat string', () => {
+    it('normalises all days around a given date format string', () => {
+      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'dd-mm-yyyy - dddd' });
+      expect(septemberDays[0]).to.eql('### 01-09-2017 - Friday\n- ');
+    });
+
+    it('can handle some really nutty formats', () => {
+      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'dd-mm,mmm,yyyy - ddd - dddd' });
+      expect(septemberDays[0]).to.eql('### 01-09,Sep,2017 - Fri - Friday\n- ');
+    });
+
+    it('handles standard named formats', () => {
+      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'mediumDate' });
+      expect(septemberDays[0]).to.eql('### Sep 1, 2017\n- ');
+    });
+
+    it('respects our dog wishes', () => {
+      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'isoDate', moarDog: true });
+      expect(septemberDays[0]).to.eql('### 2017🐶09🐶01\n- ');
+    });
   });
 });
