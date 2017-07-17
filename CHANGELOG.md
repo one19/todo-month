@@ -3,7 +3,8 @@
 ## [Unreleased][]
 
 ### Changed
-- Refactored date string parsing to use standard date string format
+- Refactored date string parsing to use standard date string format.
+- Consistify package & git repo name to `todo-month`.
 
 ### Added
 - Adds `prepush` testing & `esling --fix`es into the commit itself!

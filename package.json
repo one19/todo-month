@@ -1,5 +1,5 @@
 {
-  "name": "month-todo",
+  "name": "todo-month",
   "version": "1.1.1",
   "description": "Make a markdown monthly todo, given time",
   "main": "index.js",
