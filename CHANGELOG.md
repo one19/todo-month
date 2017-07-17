@@ -2,6 +2,8 @@
 
 ## [Unreleased][]
 
+## [1.2.0][] - 2017-07-17
+
 ### Changed
 - Refactored date string parsing to use standard date string format.
 - Consistify package & git repo name to `todo-month`.
@@ -24,7 +26,8 @@
 ### Added
 - Changelog versioning
 
-[Unreleased]: https://github.com/one19/monthTodo/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/one19/monthTodo/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/one19/monthTodo/compare/v1.1.1...v1.2.0
 [1.1.1]: https://github.com/one19/monthTodo/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/one19/monthTodo/compare/v1.1.0...v1.1.0
 [1.0.1]: https://github.com/one19/monthTodo/tree/v1.0.1
