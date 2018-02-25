@@ -1,13 +1,15 @@
 # Changelog
 
 ## [Unreleased][]
+### Changed
+- Made the date formatter slightly more accepting.
+### Added
+- `-weekdays` for only generating using the weekdays.
 
 ## [1.2.0][] - 2017-07-17
-
 ### Changed
 - Refactored date string parsing to use standard date string format.
 - Consistify package & git repo name to `todo-month`.
-
 ### Added
 - Adds `prepush` testing & `esling --fix`es into the commit itself!
 - Adds optionally formatting dates to any valid datestring.
@@ -15,14 +17,12 @@
 ## [1.1.0][] - 2017-07-08
 ### Changed
 - Refactored code, adding commander.
-
 ### Added
 - `-reverse`, `--dog`, and `--moar-dog` flag handling.
 
 ## [1.0.1][] - 2017-07-07
 ### Changed
 - Refactored code, adding lodash.
-
 ### Added
 - Changelog versioning
 

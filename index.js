@@ -9,9 +9,10 @@ const parseDateString = require('./src/date_parser');
 program
   .command('* [dateString]')
   .option('-r  --reverse', 'Reverse month output flow')
+  .option('-w  --weekdays', 'Only return weekdays in month')
+  .option('-f, --format [string]', 'Optionally pass a date format string in')
   .option('-d, --dog', 'Add doggos')
   .option('-D, --moar-dog', 'Add lots of dog')
-  .option('-f, --format [string]', 'Optionally pass a date format string in')
   .parse(process.argv);
 
 

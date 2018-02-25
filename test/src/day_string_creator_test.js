@@ -43,12 +43,17 @@ describe('dayString(date, month)', () => {
 
   it('lets you invert the ordering by passing -r or --reverse', () => {
     const septemberDays = dayStringer(new Date('2017-09'), 8, { reverse: true });
-    expect(septemberDays).to.eql(monthOfSeptember.reverse());
+    expect(septemberDays.reverse()).to.eql(monthOfSeptember);
   });
 
   it('handles leap years', () => {
     const leapFeb = dayStringer(new Date('2020-02'), 1);
     expect(leapFeb.length).to.eql(29);
+  });
+
+  it('allows you to output only the weekdays', () => {
+    const septemberDays = dayStringer(new Date('2017-09'), 8, { weekdays: true });
+    expect(septemberDays).to.eql(monthOfSeptember.filter(e => !e.match(/SATU|SUND/)));
   });
 
   describe('with dogs', () => {

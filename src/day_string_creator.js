@@ -22,7 +22,7 @@ const remapDogDays = (days, opts) => {
 
 
 module.exports = (date, monthIndex, options = {}) => {
-  const { reverse, format = 'dd-mm-yyyyxx' } = options;
+  const { reverse, weekdays, format = 'dd-mm-yyyyxx' } = options;
 
   /*
   * Doing a bit of nonstandard behaviour proofing here:
@@ -38,7 +38,11 @@ module.exports = (date, monthIndex, options = {}) => {
 
   const year = date.getFullYear();
   const days = daysInMonth(year, monthIndex + 1);
-  const daysArray = reverse ? _.times(days, Number).reverse() : _.times(days, Number);
+  let daysArray = reverse ? _.times(days, Number).reverse() : _.times(days, Number);
+
+  if (weekdays) {
+    daysArray = daysArray.filter(day => ![0, 6].includes(weekday(year, monthIndex, day + 1)));
+  }
 
   const stringDays = daysArray.map(dayI => (
     '### ' +
@@ -46,5 +50,6 @@ module.exports = (date, monthIndex, options = {}) => {
     `${defaultFormat ? ` - ${customDays(weekday(year, monthIndex, dayI + 1))}` : ''}` +
     '\n- '
   ));
+
   return remapDogDays(stringDays, options);
 };

@@ -50,7 +50,19 @@ Or simply: `todo-month --reverse --dog -f 'ddd - yy'`
 ### Sun 🐶 17
 - 
 ```
+And now supporting *only scheduling weekdays!* `todo-month -w -f 'dddd'`
+```
+### Friday
+- 
+### Monday
+- 
+```
 
 ### TODO:
+- refactor filter application to be more streamlined
+- refactor construction of months/days to be more modular
+- implement random/even distribution of regular events
+- allow manipulation of tags, titles, and events
+- allow users to save their standard calls to a config so they only have to input their preferences once
 - coverage
 - tests interacting with the command line
