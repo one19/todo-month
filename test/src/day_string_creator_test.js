@@ -74,6 +74,11 @@ describe('dayString(date, month)', () => {
       expect(septemberDays[0]).to.eql('### 01-09-2017 - Friday\n- ');
     });
 
+    it('smartly tries to downcase date format strings', () => {
+      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'DD-MM-YYYY - DDDD' });
+      expect(septemberDays[0]).to.eql('### 01-09-2017 - Friday\n- ');
+    });
+
     it('can handle some really nutty formats', () => {
       const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'dd-mm,mmm,yyyy - ddd - dddd' });
       expect(septemberDays[0]).to.eql('### 01-09,Sep,2017 - Fri - Friday\n- ');

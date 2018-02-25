@@ -23,8 +23,18 @@ const remapDogDays = (days, opts) => {
 
 module.exports = (date, monthIndex, options = {}) => {
   const { reverse, format = 'dd-mm-yyyyxx' } = options;
-  const safeFormat = format.slice(-2) === 'xx' ? format.slice(0, -2) : format;
-  const myFormat = safeFormat !== format;
+
+  /*
+  * Doing a bit of nonstandard behaviour proofing here:
+  * Sometimes it can be hard to remember proper capitalisation params.
+  * Instead of just chucking back really unhelpful DDDDYYYY strings, we downcase.
+  *
+  * Also, the `xx` is to handle appending `MO/TU/SATURDAY` tags that I personally like.
+  */
+  const defaultFormat = format === 'dd-mm-yyyyxx';
+  const safeFormat = defaultFormat ?
+    format.slice(0, -2) :
+    format.replace(/[YM]|D+(?!ate)/g, match => match.toLowerCase());
 
   const year = date.getFullYear();
   const days = daysInMonth(year, monthIndex + 1);
@@ -33,7 +43,7 @@ module.exports = (date, monthIndex, options = {}) => {
   const stringDays = daysArray.map(dayI => (
     '### ' +
     `${dateFormat(new Date(year, monthIndex, dayI + 1), safeFormat)}` +
-    `${myFormat ? ` - ${customDays(weekday(year, monthIndex, dayI + 1))}` : ''}` +
+    `${defaultFormat ? ` - ${customDays(weekday(year, monthIndex, dayI + 1))}` : ''}` +
     '\n- '
   ));
   return remapDogDays(stringDays, options);
