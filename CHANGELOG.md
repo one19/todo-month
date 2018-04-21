@@ -3,6 +3,9 @@
 ## [Unreleased][]
 - Allowed the user to set the title using -T
 - Allowed the user to set the tag using -t
+- Allowed the user to default to exporting the next month
+- Store input configs by default for subsequent run ease
+- Exposed --reset so end user can kill pre-existing config
 
 ## [1.3.0][] - 2018-02-26
 ### Changed

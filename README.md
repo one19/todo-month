@@ -27,6 +27,7 @@ This is really useful for people who like to make the most of their days, weeks,
 2. When in your month (like on the first): `todo-month` anywhere in your terminal
 3. For an upcoming month (like september): `todo-month 2017-09 --reverse`
 4. Bask in the pretty colors when the month is deposited in your clipboard
+5. After the first time you fire off a `todo-month ...STUFF`, it'll remember your options!
 
 ### Let's get argumentative!
 
@@ -40,8 +41,9 @@ This is really useful for people who like to make the most of their days, weeks,
 | -t | --tag | `string` | replace the bottom categorization tag | `todo-month --tag "#todo/nightly"` |
 | -d | --dog | `void` | replaces some characters with dogfaces | `todo-month --dog` |
 | -D | --moard-dog | `void` | replaces *alot* of characters with face of dog | `todo-month --D` |
-| * | * | `string` | todo month accepts a date string as an input, and tries to use it | `todo-month 10-12-1987` |
-| -f | --format | `string` | **explained below in detail**, format the date used to make days | `todo-month -f "ddd-mm"` |
+| -R | --reset | `void` | replaces any pre-existing config with only the args of this run | `todo-month -R -d` |
+| * | * | `string` | takes a date string as an input, and tries to use it | `todo-month 10-12-1987` |
+| -f | --format | `string` | **explained below in detail:** format each day | `todo-month -f "ddd-mm"` |
 
 ### The great formatting:
 
