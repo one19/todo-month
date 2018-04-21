@@ -28,11 +28,25 @@ This is really useful for people who like to make the most of their days, weeks,
 3. For an upcoming month (like september): `todo-month 2017-09 --reverse`
 4. Bask in the pretty colors when the month is deposited in your clipboard
 
+### Let's get argumentative!
+
+`todo-month` can be called with a dizzying number of arguments!
+| Argument | Long Call | Accepts | Description | Example |
+| --- | --- | --- | --- | --- |
+| -r | --reverse | `void` | reverse the days, starting with the end of the month | `todo-month -r` |
+| -w | --weekdays | `void` | don't list weekends in output month | `todo-month --weekdays` |
+| -T | --title | `string` | replace the title, optionally use month | `todo-month -T "-x's tasks:"` |
+| -t | --tag | `string` | replace the bottom categorization tag | `todo-month --tag "#todo/nightly"` |
+| -d | --dog | `void` | replaces some characters with dogfaces | `todo-month --dog` |
+| -D | --moard-dog | `void` | replaces *alot* of characters with face of dog | `todo-month --D` |
+| * | * | `string` | todo month accepts a date string as an input, and tries to use it | `todo-month 10-12-1987` |
+| -f | --format | `string` | **explained below in detail**, format the date used to make days | `todo-month -f "ddd-mm"` |
+
 ### The great formatting:
 
 This app is capable of outputting a dizzying amount of date formats. The only nonstandard format is the one you get when you only run `month-todo`.
 If you pass it an arbitrary format string, you get that arbitrary format output!
-For example: `todo-month -f -f "dddd - yy - mm"`
+For example: `todo-month -f "dddd - yy - mm"`
 ```
 ### Saturday - 17 - 07
 - 
@@ -65,7 +79,6 @@ And now supporting *only scheduling weekdays!* `todo-month -w -f 'dddd'`
 - refactor filter application to be more streamlined
 - refactor construction of months/days to be more modular
 - implement random/even distribution of regular events
-- allow manipulation of tags, titles, and events
 - allow users to save their standard calls to a config so they only have to input their preferences once
 - coverage
 - tests interacting with the command line

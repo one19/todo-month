@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+- Allowed the user to set the title using -T
+- Allowed the user to set the tag using -t
 
 ## [1.3.0][] - 2018-02-26
 ### Changed

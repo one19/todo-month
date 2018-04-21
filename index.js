@@ -13,6 +13,8 @@ program
   .option('-f, --format [string]', 'Optionally pass a date format string in')
   .option('-d, --dog', 'Add doggos')
   .option('-D, --moar-dog', 'Add lots of dog')
+  .option('-T, --title [string]', 'replace the title')
+  .option('-t, --tag [string]', 'replace the hashtag')
   .parse(process.argv);
 
 
@@ -25,11 +27,13 @@ const MONTH_NAMES = [
   'September', 'October', 'November', 'December'
 ];
 const monthIndex = date.getMonth();
+const thisMonth = MONTH_NAMES[monthIndex];
 
+const defaultIntro = `# NIGHTLY ${thisMonth.toUpperCase()}`;
+const intro = options.title ? `${options.title.replace('-X', thisMonth)}` : defaultIntro;
 
-const intro = `# NIGHTLY ${MONTH_NAMES[monthIndex].toUpperCase()}`;
 const list = dayStringer(date, monthIndex, options);
-const end = '\n#todo';
+const end = `\n${options.tag ? options.tag : '#todo'}`;
 
 
 const result = [intro, ...list, end].join('\n');
