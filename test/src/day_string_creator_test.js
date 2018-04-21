@@ -35,67 +35,67 @@ const monthOfSeptember = [
 
 describe('dayString(date, month)', () => {
   it('returns a list of day strings for a given month/date', () => {
-    const septemberDays = dayStringer(new Date('2017-09'), 8);
-    const februaryDays = dayStringer(new Date('2019-02'), 1);
+    const septemberDays = dayStringer(2017, 8);
+    const februaryDays = dayStringer(2019, 1);
     expect(februaryDays.length).to.eql(28);
     expect(septemberDays).to.eql(monthOfSeptember);
   });
 
   it('lets you invert the ordering by passing -r or --reverse', () => {
-    const septemberDays = dayStringer(new Date('2017-09'), 8, { reverse: true });
+    const septemberDays = dayStringer(2017, 8, { reverse: true });
     expect(septemberDays.reverse()).to.eql(monthOfSeptember);
   });
 
   it('handles leap years', () => {
-    const leapFeb = dayStringer(new Date('2020-02'), 1);
+    const leapFeb = dayStringer(2020, 1);
     expect(leapFeb.length).to.eql(29);
   });
 
   it('allows you to output only the weekdays', () => {
-    const septemberDays = dayStringer(new Date('2017-09'), 8, { weekdays: true });
+    const septemberDays = dayStringer(2017, 8, { weekdays: true });
     expect(septemberDays).to.eql(monthOfSeptember.filter(e => !e.match(/SATU|SUND/)));
   });
 
   describe('with dogs', () => {
     it('is capable of being silly with dogs', () => {
-      const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true });
+      const dogDays = dayStringer(2017, 8, { dog: true });
       expect(dogDays[0]).to.eql('### 01-09-2017 🐶 Fr\n- ');
     });
 
     it('seriously, is capable of being silly with dogs', () => {
-      const dogDays = dayStringer(new Date('2017-09'), 8, { moarDog: true });
+      const dogDays = dayStringer(2017, 8, { moarDog: true });
       expect(dogDays[0]).to.eql('### 01🐶09🐶2017 - Fr\n- ');
     });
 
     it('gets totally inundated with doggos', () => {
-      const dogDays = dayStringer(new Date('2017-09'), 8, { dog: true, moarDog: true });
+      const dogDays = dayStringer(2017, 8, { dog: true, moarDog: true });
       expect(dogDays[0]).to.eql('### 01🐶09🐶2017 🐶 Fr\n- ');
     });
   });
 
   describe('when given dateformat string', () => {
     it('normalises all days around a given date format string', () => {
-      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'dd-mm-yyyy - dddd' });
+      const septemberDays = dayStringer(2017, 8, { format: 'dd-mm-yyyy - dddd' });
       expect(septemberDays[0]).to.eql('### 01-09-2017 - Friday\n- ');
     });
 
     it('smartly tries to downcase date format strings', () => {
-      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'DD-MM-YYYY - DDDD' });
+      const septemberDays = dayStringer(2017, 8, { format: 'DD-MM-YYYY - DDDD' });
       expect(septemberDays[0]).to.eql('### 01-09-2017 - Friday\n- ');
     });
 
     it('can handle some really nutty formats', () => {
-      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'dd-mm,mmm,yyyy - ddd - dddd' });
+      const septemberDays = dayStringer(2017, 8, { format: 'dd-mm,mmm,yyyy - ddd - dddd' });
       expect(septemberDays[0]).to.eql('### 01-09,Sep,2017 - Fri - Friday\n- ');
     });
 
     it('handles standard named formats', () => {
-      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'mediumDate' });
+      const septemberDays = dayStringer(2017, 8, { format: 'mediumDate' });
       expect(septemberDays[0]).to.eql('### Sep 1, 2017\n- ');
     });
 
     it('respects our dog wishes', () => {
-      const septemberDays = dayStringer(new Date('2017-09'), 8, { format: 'isoDate', moarDog: true });
+      const septemberDays = dayStringer(2017, 8, { format: 'isoDate', moarDog: true });
       expect(septemberDays[0]).to.eql('### 2017🐶09🐶01\n- ');
     });
   });

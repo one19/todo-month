@@ -21,7 +21,7 @@ const remapDogDays = (days, opts) => {
 };
 
 
-module.exports = (date, monthIndex, options = {}) => {
+module.exports = (year, monthIndex, options = {}) => {
   const { reverse, weekdays, format = 'dd-mm-yyyyxx' } = options;
 
   /*
@@ -36,7 +36,6 @@ module.exports = (date, monthIndex, options = {}) => {
     format.slice(0, -2) :
     format.replace(/[YM]|D+(?!ate)/g, match => match.toLowerCase());
 
-  const year = date.getFullYear();
   const days = daysInMonth(year, monthIndex + 1);
   let daysArray = reverse ? _.times(days, Number).reverse() : _.times(days, Number);
 

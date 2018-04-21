@@ -32,8 +32,9 @@ This is really useful for people who like to make the most of their days, weeks,
 
 `todo-month` can be called with a dizzying number of arguments!
 | Argument | Long Call | Accepts | Description | Example |
-| --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | --- | :---: |
 | -r | --reverse | `void` | reverse the days, starting with the end of the month | `todo-month -r` |
+| -n | --next | `void` | use the next month, instead of this/the arg one | `todo-month -n` |
 | -w | --weekdays | `void` | don't list weekends in output month | `todo-month --weekdays` |
 | -T | --title | `string` | replace the title, optionally use month | `todo-month -T "-x's tasks:"` |
 | -t | --tag | `string` | replace the bottom categorization tag | `todo-month --tag "#todo/nightly"` |
