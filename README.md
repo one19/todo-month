@@ -1,6 +1,9 @@
 # TODO-MONTH
 
-[![Build status](https://badge.buildkite.com/5427c81c51ca67dff45bff63a533c3a1cbb864416d87210167.svg)](https://buildkite.com/the-hoard/todo-month)
+
+[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/npm.svg?sanitize=true)](https://www.npmjs.com/package/todo-month)
+
+---
 
 The tiniest little module for exporting a pretty md month of stuff to do
 
