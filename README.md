@@ -30,17 +30,17 @@ This is really useful for people who like to make the most of their days, weeks,
 5. After the first time you fire off a `todo-month ...STUFF`, it'll remember your options!
 
 ### Let's get argumentative!
-
 `todo-month` can be called with a dizzying number of arguments!
-| Argument | Long Call | Accepts | Description | Example |
-| :---: | :---: | :---: | --- | :---: |
+
+| Arg | Longform | Accepts | Description | Example |
+| :---------------: | :---------------: | :---------------: | :--------------- | :---------------: |
 | -r | --reverse | `void` | reverse the days, starting with the end of the month | `todo-month -r` |
 | -n | --next | `void` | use the next month, instead of this/the arg one | `todo-month -n` |
 | -w | --weekdays | `void` | don't list weekends in output month | `todo-month --weekdays` |
 | -T | --title | `string` | replace the title, optionally use month | `todo-month -T "-x's tasks:"` |
 | -t | --tag | `string` | replace the bottom categorization tag | `todo-month --tag "#todo/nightly"` |
 | -d | --dog | `void` | replaces some characters with dogfaces | `todo-month --dog` |
-| -D | --moard-dog | `void` | replaces *alot* of characters with face of dog | `todo-month --D` |
+| -D | --moar-dog | `void` | replaces *alot* of characters with face of dog | `todo-month --D` |
 | -R | --reset | `void` | replaces any pre-existing config with only the args of this run | `todo-month -R -d` |
 | * | * | `string` | takes a date string as an input, and tries to use it | `todo-month 10-12-1987` |
 | -f | --format | `string` | **explained below in detail:** format each day | `todo-month -f "ddd-mm"` |
