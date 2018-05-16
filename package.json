@@ -12,7 +12,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "prepush": "yarn test",
-    "test": "mocha",
+    "test": "snyk test && mocha",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "lint-staged": {
@@ -30,13 +30,14 @@
     "lint-staged": "^4.0.1",
     "mocha": "^3.4.2",
     "mocha-eslint": "^3.0.1",
-    "version-changelog": "^2.1.0"
+    "version-changelog": "^2.1.0",
+    "snyk": "^1.80.1"
   },
   "dependencies": {
     "clipboardy": "^1.2.3",
     "colors": "^1.1.2",
     "commander": "^2.11.0",
     "dateformat": "^2.0.0",
-    "lodash": "^4.17.4"
+    "lodash": "4.17.5"
   }
 }
