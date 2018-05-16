@@ -11,8 +11,8 @@
   },
   "scripts": {
     "precommit": "lint-staged",
-    "prepush": "yarn test",
-    "test": "snyk test && mocha",
+    "prepush": "snyk test && yarn test",
+    "test": "mocha",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "lint-staged": {
