@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // this ~crazy-scary~ _amazing_ package mutates Strings globally
 const colors = require('colors'); // eslint-disable-line no-unused-vars
-const copyPaster = require('copy-paste');
+const copyPaster = require('clipboardy');
 const program = require('commander');
 const dayStringer = require('./src/day_string_creator');
 const parseDateString = require('./src/date_parser');
@@ -53,7 +53,7 @@ const end = `\n${options.tag ? options.tag : '#todo'}`;
 
 
 const result = [intro, ...list, end].join('\n');
-copyPaster.copy(result);
+copyPaster.write(result);
 // eslint-disable-next-line no-console
 console.log('Wrote your month to the clipboard!'.rainbow.concat('🐶'));
 
