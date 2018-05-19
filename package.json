@@ -3,16 +3,23 @@
   "version": "1.4.0",
   "description": "Make a markdown monthly todo, given time",
   "main": "index.js",
-  "repository": "git@github.com:one19/monthTodo.git",
+  "repository": "git@github.com:one19/todo-month.git",
   "author": "Drew Showalter <maelstroswim@gmail.com>",
   "license": "MIT",
   "bin": {
-    "todo-month": "index.js"
+    "todo-month": "bin/index.js"
   },
+  "files": [
+    "bin/index.js",
+    "dist/index.js",
+    "dist/index.map"
+  ],
   "scripts": {
-    "precommit": "lint-staged",
+    "precommit": "npm run build && lint-staged",
+    "build": "parcel build -o dist/index.js -t node index.js && ./shebang_it.js",
     "prepush": "snyk test && yarn test",
-    "test": "mocha",
+    "test": "mocha --compilers js:babel-core/register test",
+    "coverage": "nyc --reporter=html --reporter=text mocha --compilers js:babel-core/register test",
     "version": "version-changelog CHANGELOG.md && changelog-verify CHANGELOG.md && git add CHANGELOG.md"
   },
   "lint-staged": {
@@ -22,16 +29,25 @@
     ]
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "chai": "^4.0.2",
     "changelog-verify": "^1.0.4",
-    "eslint": "3.19.0",
-    "eslint-config-shortlyster": "^2.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-mocha": "^5.0.0",
     "husky": "^0.14.2",
     "lint-staged": "^4.0.1",
     "mocha": "^3.4.2",
     "mocha-eslint": "^3.0.1",
-    "version-changelog": "^2.1.0",
-    "snyk": "^1.80.1"
+    "nyc": "^11.8.0",
+    "parcel-bundler": "^1.8.1",
+    "snyk": "^1.80.1",
+    "version-changelog": "^2.1.0"
   },
   "dependencies": {
     "clipboardy": "^1.2.3",

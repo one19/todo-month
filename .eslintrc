@@ -1,5 +1,5 @@
 {
-  "extends": "shortlyster",
+  "extends": "airbnb-base",
   "rules": {
     "no-confusing-arrow": "off"
   },

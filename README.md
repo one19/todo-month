@@ -1,7 +1,7 @@
 # TODO-MONTH
 
 
-[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/npm.svg?sanitize=true)](https://www.npmjs.com/package/todo-month) [![Known Vulnerabilities](https://snyk.io/test/github/one19/todo-month/badge.svg)](https://snyk.io/test/github/one19/todo-month) [![Testing Status](https://travis-ci.org/one19/todo-month.svg?branch=master)](https://travis-ci.org/one19/todo-month)
+[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/npm.svg?sanitize=true)](https://www.npmjs.com/package/todo-month) [![Known Vulnerabilities](https://snyk.io/test/github/one19/todo-month/badge.svg)](https://snyk.io/test/github/one19/todo-month) [![Testing Status](https://travis-ci.org/one19/todo-month.svg?branch=master)](https://travis-ci.org/one19/todo-month) [![codecov](https://codecov.io/gh/one19/todo-month/branch/master/graph/badge.svg)](https://codecov.io/gh/one19/todo-month)
 
 
 ---
@@ -83,6 +83,4 @@ And now supporting *only scheduling weekdays!* `todo-month -w -f 'dddd'`
 - refactor filter application to be more streamlined
 - refactor construction of months/days to be more modular
 - implement random/even distribution of regular events
-- coverage
 - tests interacting with the command line
-- transpile for older node compatibility
