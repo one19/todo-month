@@ -3,14 +3,14 @@
   "version": "1.4.0",
   "description": "Make a markdown monthly todo, given time",
   "main": "index.js",
-  "repository": "git@github.com:one19/monthTodo.git",
+  "repository": "git@github.com:one19/todo-month.git",
   "author": "Drew Showalter <maelstroswim@gmail.com>",
   "license": "MIT",
   "bin": {
     "todo-month": "bin/index.js"
   },
   "scripts": {
-    "precommit": "lint-staged",
+    "precommit": "npm run build && lint-staged",
     "build": "parcel build -o dist/index.js -t node index.js && ./shebang_it.js",
     "prepush": "snyk test && yarn test",
     "test": "mocha --compilers js:babel-core/register test",
