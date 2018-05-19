@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+
+## [1.4.1][] - 2018-05-19
 - Added coverage and CI tools.
 - Transition to transpiled version.
 
@@ -37,7 +39,8 @@
 ### Added
 - Changelog versioning
 
-[Unreleased]: https://github.com/one19/monthTodo/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/one19/monthTodo/compare/v1.4.1...HEAD
+[1.4.1]: https://github.com/one19/monthTodo/compare/v1.4.0...v1.4.1
 [1.4.0]: https://github.com/one19/monthTodo/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/one19/monthTodo/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/one19/monthTodo/compare/v1.1.1...v1.2.0

@@ -1,6 +1,6 @@
 {
   "name": "todo-month",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Make a markdown monthly todo, given time",
   "main": "index.js",
   "repository": "git@github.com:one19/todo-month.git",
