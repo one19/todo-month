@@ -2,6 +2,16 @@
   "name": "todo-month",
   "version": "1.4.1",
   "description": "Make a markdown monthly todo, given time",
+  "keywords": [
+    "cli",
+    "date",
+    "todo",
+    "tasks",
+    "monthly",
+    "markdown",
+    "checklist",
+    "clipboard"
+  ],
   "main": "index.js",
   "repository": "git@github.com:one19/todo-month.git",
   "author": "Drew Showalter <maelstroswim@gmail.com>",

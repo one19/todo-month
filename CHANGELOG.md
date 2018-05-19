@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+- Patch keywords and readme formatting.
 
 ## [1.4.1][] - 2018-05-19
 - Added coverage and CI tools.
