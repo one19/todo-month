@@ -12,4 +12,6 @@ cache:
   directories:
     - node_modules
 script:
-  
+  - npm run coverage
+after_success:
+  - nyc report --reporter=text-lcov > coverage.lcov && codecov
