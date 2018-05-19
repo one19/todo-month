@@ -7,10 +7,11 @@
   "author": "Drew Showalter <maelstroswim@gmail.com>",
   "license": "MIT",
   "bin": {
-    "todo-month": "index.js"
+    "todo-month": "bin/index.js"
   },
   "scripts": {
     "precommit": "lint-staged",
+    "build": "parcel build -o dist/index.js -t node index.js && ./shebang_it.js",
     "prepush": "snyk test && yarn test",
     "test": "mocha",
     "coverage": "nyc --reporter=html --reporter=text mocha",
@@ -23,6 +24,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "chai": "^4.0.2",
     "changelog-verify": "^1.0.4",
     "eslint": "^4.19.1",
@@ -35,6 +37,7 @@
     "mocha": "^3.4.2",
     "mocha-eslint": "^3.0.1",
     "nyc": "^11.8.0",
+    "parcel-bundler": "^1.8.1",
     "snyk": "^1.80.1",
     "version-changelog": "^2.1.0"
   },
