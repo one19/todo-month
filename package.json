@@ -9,6 +9,11 @@
   "bin": {
     "todo-month": "bin/index.js"
   },
+  "files": [
+    "bin/index.js",
+    "dist/index.js",
+    "dist/index.map"
+  ],
   "scripts": {
     "precommit": "npm run build && lint-staged",
     "build": "parcel build -o dist/index.js -t node index.js && ./shebang_it.js",
