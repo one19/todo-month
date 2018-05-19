@@ -9,27 +9,27 @@ const { readConfig, saveConfig } = require('./src/configurator');
 
 const MONTH_NAMES = [
   'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
-  'September', 'October', 'November', 'December'
+  'September', 'October', 'November', 'December',
 ];
 
 // when adding an option, don't forget to pass it to saveConfig!
 program
-.command('* [dateString]')
-.option('-n --next', 'use the month after the selected month')
-.option('-r  --reverse', 'Reverse month output flow')
-.option('-w  --weekdays', 'Only return weekdays in month')
-.option('-f, --format [string]', 'Optionally pass a date format string in')
-.option('-d, --dog', 'Add doggos')
-.option('-D, --moar-dog', 'Add lots of dog')
-.option('-T, --title [string]', 'replace the title')
-.option('-t, --tag [string]', 'replace the hashtag')
-.option('-R, --reset', 'replace existing config with this run\'s args')
-.parse(process.argv);
+  .command('* [dateString]')
+  .option('-n --next', 'use the month after the selected month')
+  .option('-r  --reverse', 'Reverse month output flow')
+  .option('-w  --weekdays', 'Only return weekdays in month')
+  .option('-f, --format [string]', 'Optionally pass a date format string in')
+  .option('-d, --dog', 'Add doggos')
+  .option('-D, --moar-dog', 'Add lots of dog')
+  .option('-T, --title [string]', 'replace the title')
+  .option('-t, --tag [string]', 'replace the hashtag')
+  .option('-R, --reset', 'replace existing config with this run\'s args')
+  .parse(process.argv);
 
 const existingConfig = readConfig();
 const options = {
   ...(program.commands[0].reset ? {} : existingConfig),
-  ...program.commands[0]
+  ...program.commands[0],
 };
 
 const possibleDateString = program.commands[0].args[0];

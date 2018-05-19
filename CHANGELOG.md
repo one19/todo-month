@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+- Added coverage and CI tools.
 
 ## [1.4.0][] - 2018-04-22
 - Allowed the user to set the title using -T
