@@ -3,8 +3,10 @@
   "rules": {
     "no-confusing-arrow": "off"
   },
+  "env": {
+    "mocha": true
+  },
   "globals": {
-    "mocha": true,
     "expect": true
   }
 }
