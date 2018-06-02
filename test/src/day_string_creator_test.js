@@ -30,7 +30,7 @@ const monthOfSeptember = [
   '### 27-09-2017 - We\n- ',
   '### 28-09-2017 - Th\n- ',
   '### 29-09-2017 - Fr\n- ',
-  '### 30-09-2017 - SATURDAY\n- '
+  '### 30-09-2017 - SATURDAY\n- ',
 ];
 
 describe('dayString(date, month)', () => {

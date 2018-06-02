@@ -2,15 +2,15 @@ const _ = require('lodash');
 const dateFormat = require('dateformat');
 
 const DAY_NAMES = [
-  'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
+  'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
 ];
 
 const weekday = (year, month, day) => new Date(year, month, day).getDay();
 const daysInMonth = (year, month) => new Date(year, month, 0).getDate();
 const customDays = dayNumber => (
   [0, 6].includes(dayNumber)
-  ? DAY_NAMES[dayNumber].toUpperCase()
-  : DAY_NAMES[dayNumber].slice(0, 2)
+    ? DAY_NAMES[dayNumber].toUpperCase()
+    : DAY_NAMES[dayNumber].slice(0, 2)
 );
 
 const remapDogDays = (days, opts) => {

@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+- Patch readme formatting again.
+- Add `--` prefixed dateformat formatting to the title & end blocks
 
 ## [1.4.2][] - 2018-05-19
 - Patch keywords and readme formatting.

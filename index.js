@@ -5,6 +5,7 @@ const copyPaster = require('clipboardy');
 const program = require('commander');
 const dayStringer = require('./src/day_string_creator');
 const parseDateString = require('./src/date_parser');
+const simpleFormatTag = require('./src/simple_date_formatter');
 const { readConfig, saveConfig } = require('./src/configurator');
 
 const MONTH_NAMES = [
@@ -46,10 +47,10 @@ const year = rolloverNextYear ? date.getFullYear() + 1 : date.getFullYear();
 // title parsing, it has to be smart about the -X month replacement
 const thisMonth = MONTH_NAMES[monthIndex];
 const defaultIntro = `# NIGHTLY ${thisMonth.toUpperCase()}`;
-const intro = options.title ? `${options.title.replace('-X', thisMonth)}` : defaultIntro;
+const intro = options.title ? simpleFormatTag(options.title) : defaultIntro;
 
 const list = dayStringer(year, monthIndex, options);
-const end = `\n${options.tag ? options.tag : '#todo'}`;
+const end = `\n${options.tag ? simpleFormatTag(options.tag) : '#todo'}`;
 
 
 const result = [intro, ...list, end].join('\n');
