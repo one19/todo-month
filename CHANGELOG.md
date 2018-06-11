@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+- Change to codeclimate for coverage and quality
 
 ## [1.5.0][] - 2018-06-02
 - Patch readme formatting again.
