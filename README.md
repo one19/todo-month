@@ -1,7 +1,6 @@
 # TODO-MONTH
 
-
-[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/npm.svg?sanitize=true)](https://www.npmjs.com/package/todo-month) [![Known Vulnerabilities](https://snyk.io/test/github/one19/todo-month/badge.svg)](https://snyk.io/test/github/one19/todo-month) [![Testing Status](https://travis-ci.org/one19/todo-month.svg?branch=master)](https://travis-ci.org/one19/todo-month) [![codecov](https://codecov.io/gh/one19/todo-month/branch/master/graph/badge.svg)](https://codecov.io/gh/one19/todo-month)
+[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/npm.svg?sanitize=true)](https://www.npmjs.com/package/todo-month) [![Known Vulnerabilities](https://snyk.io/test/github/one19/todo-month/badge.svg)](https://snyk.io/test/github/one19/todo-month) [![Testing Status](https://travis-ci.org/one19/todo-month.svg?branch=master)](https://travis-ci.org/one19/todo-month) [![Test Coverage](https://api.codeclimate.com/v1/badges/2f4e240b4d884e79bad4/test_coverage)](https://codeclimate.com/github/one19/todo-month/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/2f4e240b4d884e79bad4/maintainability)](https://codeclimate.com/github/one19/todo-month/maintainability)
 
 ---
 
