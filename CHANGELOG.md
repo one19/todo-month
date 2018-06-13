@@ -1,6 +1,8 @@
 # Changelog
 
 ## [Unreleased][]
+
+## [1.5.1][] - 2018-06-13
 - Add a package.json script for manual lint fixing.
 - patch issue where `-t` and `-T` were ignored by date parsing
 - Change to codeclimate for coverage and quality
@@ -49,7 +51,8 @@
 ### Added
 - Changelog versioning
 
-[Unreleased]: https://github.com/one19/monthTodo/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/one19/monthTodo/compare/v1.5.1...HEAD
+[1.5.1]: https://github.com/one19/monthTodo/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/one19/monthTodo/compare/v1.4.2...v1.5.0
 [1.4.2]: https://github.com/one19/monthTodo/compare/v1.4.1...v1.4.2
 [1.4.1]: https://github.com/one19/monthTodo/compare/v1.4.0...v1.4.1

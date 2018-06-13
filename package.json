@@ -1,6 +1,6 @@
 {
   "name": "todo-month",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Make a markdown monthly todo, given time",
   "keywords": [
     "cli",
