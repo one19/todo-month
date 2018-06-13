@@ -25,6 +25,7 @@
     "dist/index.map"
   ],
   "scripts": {
+    "lint": "eslint --fix .",
     "precommit": "npm run build && lint-staged",
     "build": "parcel build -o dist/index.js -t node index.js && ./shebang_it.js",
     "prepush": "snyk test && yarn test",
