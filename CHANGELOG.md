@@ -2,6 +2,7 @@
 
 ## [Unreleased][]
 - Add a package.json script for manual lint fixing.
+- patch issue where `-t` and `-T` were ignored by date parsing
 - Change to codeclimate for coverage and quality
 
 ## [1.5.0][] - 2018-06-02

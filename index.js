@@ -44,13 +44,14 @@ const monthIndex = options.next ? // eslint-disable-line no-nested-ternary
   : date.getMonth();
 const year = rolloverNextYear ? date.getFullYear() + 1 : date.getFullYear();
 
-// title parsing, it has to be smart about the -X month replacement
 const thisMonth = MONTH_NAMES[monthIndex];
 const defaultIntro = `# NIGHTLY ${thisMonth.toUpperCase()}`;
-const intro = options.title ? simpleFormatTag(options.title) : defaultIntro;
+const intro = options.title ?
+  simpleFormatTag(options.title, new Date(year, monthIndex)) :
+  defaultIntro;
 
 const list = dayStringer(year, monthIndex, options);
-const end = `\n${options.tag ? simpleFormatTag(options.tag) : '#todo'}`;
+const end = `\n${options.tag ? simpleFormatTag(options.tag, new Date(year, monthIndex)) : '#todo'}`;
 
 
 const result = [intro, ...list, end].join('\n');
