@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+- Patch readme with codeclimate
 
 ## [1.5.1][] - 2018-06-13
 - Add a package.json script for manual lint fixing.

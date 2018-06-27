@@ -1,6 +1,7 @@
 # TODO-MONTH
 
-[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/npm.svg?sanitize=true)](https://www.npmjs.com/package/todo-month) [![Known Vulnerabilities](https://snyk.io/test/github/one19/todo-month/badge.svg)](https://snyk.io/test/github/one19/todo-month) [![Testing Status](https://travis-ci.org/one19/todo-month.svg?branch=master)](https://travis-ci.org/one19/todo-month) [![Test Coverage](https://api.codeclimate.com/v1/badges/2f4e240b4d884e79bad4/test_coverage)](https://codeclimate.com/github/one19/todo-month/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/2f4e240b4d884e79bad4/maintainability)](https://codeclimate.com/github/one19/todo-month/maintainability)
+[![Maintenance status](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/maintained.svg?sanitize=true)](https://github.com/one19/project-status) [![published on npm!](https://raw.githubusercontent.com/one19/project-status/master/cache/todo-month/npm.svg?sanitize=true)](https://www.npmjs.com/package/todo-month)\
+[![Known Vulnerabilities](https://snyk.io/test/github/one19/todo-month/badge.svg)](https://snyk.io/test/github/one19/todo-month) [![Testing Status](https://travis-ci.org/one19/todo-month.svg?branch=master)](https://travis-ci.org/one19/todo-month) [![Test Coverage](https://api.codeclimate.com/v1/badges/cc9947368a3e3492f99f/test_coverage)](https://codeclimate.com/github/one19/todo-month/test_coverage) [![Maintainability](https://api.codeclimate.com/v1/badges/cc9947368a3e3492f99f/maintainability)](https://codeclimate.com/github/one19/todo-month/maintainability)
 
 ---
 
@@ -26,6 +27,7 @@ This is really useful for people who like to make the most of their days, weeks,
 3.  For an upcoming month (like september): `todo-month 2017-09 --reverse`
 4.  Bask in the pretty colors when the month is deposited in your clipboard
 5.  After the first time you fire off a `todo-month ...STUFF`, it'll remember your options!
+6.  Forever more all you'll have to do is run `todo-month`!
 
 ### Let's get argumentative!
 `todo-month` can be called with a dizzying number of arguments!
@@ -88,7 +90,6 @@ These formats can also be used in the `-T` for title and `-t` for end-tag blocks
 😊
 
 ### TODO:
-- refactor filter application to be more streamlined
 - refactor construction of months/days to be more modular
 - implement random/even distribution of regular events
 - tests interacting with the command line
