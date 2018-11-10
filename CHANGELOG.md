@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+- Update readme again with more information.
 
 ## [1.5.2][] - 2018-06-27
 - Patch readme with codeclimate
