@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Unreleased][]
+- Add `-c` for github markdown compatability.
 
 ## [1.5.3][] - 2018-11-10
 - Update readme again with more information.

@@ -46,6 +46,11 @@ describe('dayString(date, month)', () => {
     expect(septemberDays.reverse()).to.eql(monthOfSeptember);
   });
 
+  it('lets you change checkboxes into git-compatible markdown -c or --compat', () => {
+    const septemberDays = dayStringer(2017, 8, { compat: true });
+    expect(septemberDays.map(e => e.replace(/\n- \[ ] /g, '\n- '))).to.eql(monthOfSeptember);
+  });
+
   it('handles leap years', () => {
     const leapFeb = dayStringer(2020, 1);
     expect(leapFeb.length).to.eql(29);

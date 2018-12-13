@@ -17,6 +17,7 @@ const MONTH_NAMES = [
 program
   .command('* [dateString]')
   .option('-n --next', 'use the month after the selected month')
+  .option('-c --compat', 'use github compatible checkboxes')
   .option('-r  --reverse', 'Reverse month output flow')
   .option('-w  --weekdays', 'Only return weekdays in month')
   .option('-f, --format [string]', 'Optionally pass a date format string in')

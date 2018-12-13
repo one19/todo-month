@@ -34,6 +34,7 @@ This is really useful for people who like to make the most of their days, weeks,
 
 | Arg | Longform | Accepts | Description | Example |
 | :---------------: | :---------------: | :---------------: | :--------------- | ---------------: |
+| **-c** | --compat | `void` | swith `- ` checkboxes to git-md-compat `- [ ]` | `todo-month -c` |
 | **-r** | --reverse | `void` | reverse the days, starting with the end of the month | `todo-month -r` |
 | **-n** | --next | `void` | use the next month, instead of this/the arg one | `todo-month -n` |
 | **-w** | --weekdays | `void` | don't list weekends in output month | `todo-month --weekdays` |

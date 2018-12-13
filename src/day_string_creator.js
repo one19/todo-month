@@ -22,7 +22,11 @@ const remapDogDays = (days, opts) => {
 
 
 module.exports = (year, monthIndex, options = {}) => {
-  const { reverse, weekdays, format = 'dd-mm-yyyyxx' } = options;
+  const {
+    compat, reverse, weekdays, format = 'dd-mm-yyyyxx',
+  } = options;
+
+  const checkbox = compat ? '- [ ] ' : '- ';
 
   /*
   * Doing a bit of nonstandard behaviour proofing here:
@@ -47,7 +51,7 @@ module.exports = (year, monthIndex, options = {}) => {
     '### ' +
     `${dateFormat(new Date(year, monthIndex, dayI + 1), safeFormat)}` +
     `${defaultFormat ? ` - ${customDays(weekday(year, monthIndex, dayI + 1))}` : ''}` +
-    '\n- '
+    `\n${checkbox}`
   ));
 
   return remapDogDays(stringDays, options);
